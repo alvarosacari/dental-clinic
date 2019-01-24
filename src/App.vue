@@ -84,21 +84,16 @@
       <router-view />
     </v-content>
 
-    <v-footer
-      :inset="footer.inset"
-      app
-    >
-      <span class="px-3">
-        &copy; {{ new Date().getFullYear() }}
-      </span>
-    </v-footer>
+    <Footer />
   </v-app>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  components: {
+    Footer: () => import('@/components/Footer.vue')
+  },
+
   data () {
     return {
       dark: false,
